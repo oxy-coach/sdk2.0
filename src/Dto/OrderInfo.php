@@ -42,6 +42,13 @@ class OrderInfo
     public $is_return;
 
     /**
+     * Признак клиентского возврата
+     * @Type("bool")
+     * @var bool
+     */
+    public $is_client_return;
+
+    /**
      * Номер заказа в системе СДЭК
      * @Type("int")
      * @var int
