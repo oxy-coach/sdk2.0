@@ -56,14 +56,14 @@ class Item extends Base
 
     /**
      * Вес брутто (только для международных заказов)
-     * @Type("float")
+     * @Type("double or float")
      * @var float
      */
     public $weight_gross;
 
     /**
      * Количество единиц товара
-     * @Type("int")
+     * @Type("double or float")
      * @var int
      */
     public $amount;
