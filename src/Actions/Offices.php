@@ -37,6 +37,8 @@ class Offices extends Action
         'lang' => '',
         'take_only' => '',
         'is_handout' => '',
-        'is_reception' => ''
+        'is_reception' => '',
+        'size' => '',
+        'page' => '',
     ];
 }
