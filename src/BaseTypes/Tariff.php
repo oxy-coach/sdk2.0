@@ -82,6 +82,7 @@ class Tariff extends Base
         parent::__construct($param);
         $this->rules = [
             'date' => 'date:Y-m-d\TH:i:sO',
+            'type' => 'digits_between:1,2',
             'from_location' => [
                 'required',
                 function ($value) {
