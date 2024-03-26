@@ -22,11 +22,11 @@ class Order extends Base
     public $uuid;
 
     /**
-     * Тип заказа
+     * Тип заказа (1 - "интернет-магазин", 2 - "доставка")
      * @Type("int")
      * @var int
      */
-    public $type = 1;
+    public $type;
 
     /**
      * Номер заказа в системе СДЭК
@@ -188,6 +188,7 @@ class Order extends Base
         parent::__construct($param);
         $this->rules = [
             'tariff_code' => 'required|numeric',
+            'type' => 'digits_between:1,2',
             'services' => 'array',
             'sender' => [
                 'required',
