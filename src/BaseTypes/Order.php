@@ -181,7 +181,6 @@ class Order extends Base
 
     /**
      * Order constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

@@ -84,7 +84,6 @@ class Package extends Base
 
     /**
      * Package constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

@@ -34,8 +34,6 @@ class Action
 
     /**
      * Action constructor.
-     * @param Api $request
-     * @param Serializer $serializer
      */
     public function __construct(Api $request, Serializer $serializer)
     {
@@ -45,8 +43,6 @@ class Action
 
     /**
      * Получить данные по uuid
-     * @param string $uuid
-     * @return ApiResponse
      * @throws RequestException
      */
     public function get(string $uuid): ApiResponse
@@ -56,8 +52,6 @@ class Action
 
     /**
      * Отправка запрос на добавление элемента
-     * @param array $params
-     * @return ApiResponse
      * @throws RequestException
      */
     protected function preparedAdd(array $params = []): ApiResponse
@@ -67,8 +61,6 @@ class Action
 
     /**
      * Отправка запроса на редактирование элемента
-     * @param array $params
-     * @return ApiResponse
      * @throws RequestException
      */
     protected function preparedEdit(array $params = []): ApiResponse
@@ -79,7 +71,6 @@ class Action
     /**
      * Форматирование url для запросов
      * @param string|null $uuid
-     * @return string
      */
     protected function slug(string $uuid = null): string
     {

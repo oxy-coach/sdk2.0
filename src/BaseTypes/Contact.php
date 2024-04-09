@@ -94,7 +94,6 @@ class Contact extends Base
 
     /**
      * Contact constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

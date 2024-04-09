@@ -19,24 +19,20 @@ class PickupPointList
      */
     public $items = [];
 
-    /**
-     * @return int
-     */
     public function getCount(): int
     {
         return count($this->items);
     }
 
-    /**
-     * @param array $filter
-     * @return array
-     */
     public function filter(array $filter = []): array
     {
         $filtered = [];
         foreach ($this->items as $pvz) {
             foreach ($filter as $k => $v) {
-                if (property_exists(PickupPoint::class, $k) && mb_strtolower($pvz->$k) === mb_strtolower($v)) {
+                if (
+                    property_exists(PickupPoint::class, $k)
+                    && mb_strtolower((string) $pvz->$k) === mb_strtolower((string) $v)
+                ) {
                     $filtered[] = $pvz;
                     break;
                 }

@@ -14,13 +14,10 @@ class ActionsWithDelete extends Action
 {
     /**
      * Запрос на удаление по uuid
-     * @param string $uuid
-     * @return ApiResponse
      * @throws \CdekSDK2\Exceptions\RequestException
      */
     public function delete(string $uuid): ApiResponse
     {
-        $response = $this->http_client->delete($this->slug($uuid));
-        return $response;
+        return $this->http_client->delete($this->slug($uuid));
     }
 }

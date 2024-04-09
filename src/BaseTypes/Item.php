@@ -119,7 +119,6 @@ class Item extends Base
 
     /**
      * Item constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

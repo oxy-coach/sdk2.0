@@ -8,20 +8,12 @@ use CdekSDK2\Http\ApiResponse;
 
 trait FilteredTrait
 {
-    /**
-     * @param array $filter
-     * @return ApiResponse
-     */
     public function getFiltered(array $filter = []): ApiResponse
     {
         $add_params = $this->parseFilter($filter);
         return $this->get($add_params);
     }
 
-    /**
-     * @param  array  $filter
-     * @return string
-     */
     private function parseFilter(array $filter = []): string
     {
         $add_params = '';
@@ -35,14 +27,11 @@ trait FilteredTrait
                 $filtered[$k] = $v;
             }
         }
-        $add_params = http_build_query($filtered);
-        return $add_params;
+        return http_build_query($filtered);
     }
 
     /**
      * Переиспользуем стандартный метод
-     * @param string $filter
-     * @return ApiResponse
      */
     public function get(string $filter = ''): ApiResponse
     {

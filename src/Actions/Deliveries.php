@@ -21,8 +21,6 @@ class Deliveries extends Action
 
     /**
      * Регистрация договоренности о доставке
-     * @param Delivery $delivery
-     * @return ApiResponse
      * @throws \CdekSDK2\Exceptions\RequestException
      */
     public function add(Delivery $delivery): ApiResponse

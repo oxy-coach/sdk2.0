@@ -22,8 +22,6 @@ class Orders extends ActionsWithDelete
 
     /**
      * Создание заказа
-     * @param Order $order
-     * @return ApiResponse
      * @throws RequestException
      */
     public function add(Order $order): ApiResponse
@@ -33,8 +31,6 @@ class Orders extends ActionsWithDelete
     }
 
     /**
-     * @param Order $order
-     * @return ApiResponse
      * @throws RequestException
      */
     public function edit(Order $order): ApiResponse
@@ -45,8 +41,6 @@ class Orders extends ActionsWithDelete
 
     /**
      * Получить данные по номеру заказа СДЭК
-     * @param string $number
-     * @return ApiResponse
      * @throws RequestException
      */
     public function getByNumber(string $number): ApiResponse
@@ -57,8 +51,6 @@ class Orders extends ActionsWithDelete
 
     /**
      * Получить данные по номеру заказа в ИС клиента
-     * @param string $imNumber
-     * @return ApiResponse
      * @throws RequestException
      */
     public function getByImNumber(string $imNumber): ApiResponse

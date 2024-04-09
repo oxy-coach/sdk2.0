@@ -42,7 +42,6 @@ class Threshold extends Base
 
     /**
      * Threshold constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

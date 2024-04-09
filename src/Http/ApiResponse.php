@@ -48,9 +48,9 @@ class ApiResponse
             $this->status = $response->getStatusCode();
             if (
                 $response->hasHeader('Content-type') &&
-                strpos(implode(',', $response->getHeader('Content-type')), 'json') !== false
+                str_contains(implode(',', $response->getHeader('Content-type')), 'json')
             ) {
-                $this->body = (string)$response->getBody()->getContents();
+                $this->body = $response->getBody()->getContents();
             } else {
                 $this->body = (string)$response->getBody();
             }
@@ -71,7 +71,6 @@ class ApiResponse
 
     /**
      * Проверка корректности выполненного запроса
-     * @return bool
      */
     public function isOk(): bool
     {
@@ -80,32 +79,22 @@ class ApiResponse
 
     /**
      * Проверка наличия ошибок в запросе
-     * @return bool
      */
     public function hasErrors(): bool
     {
         return count($this->errors) > 0;
     }
 
-    /**
-     * @return string
-     */
     public function getBody(): string
     {
         return $this->body;
     }
 
-    /**
-     * @return array
-     */
     public function getErrors(): array
     {
         return $this->errors;
     }
 
-    /**
-     * @return int
-     */
     public function getStatus(): int
     {
         return $this->status;

@@ -21,8 +21,6 @@ class Intakes extends ActionsWithDelete
 
     /**
      * Создание вызова курьера
-     * @param Intake $intake
-     * @return ApiResponse
      * @throws \CdekSDK2\Exceptions\RequestException
      */
     public function add(Intake $intake): ApiResponse

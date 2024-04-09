@@ -66,8 +66,6 @@ class TariffList extends Base
 
     /**
      * TariffList constructor.
-     *
-     * @param array $param
      */
     public function __construct(array $param = [])
     {
