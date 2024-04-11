@@ -114,7 +114,6 @@ class Location extends Base
 
     /**
      * Location constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

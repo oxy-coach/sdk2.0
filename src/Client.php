@@ -105,7 +105,6 @@ class Client
 
     /**
      * Client constructor.
-     * @param ClientInterface $http
      * @param string|null $account
      * @param string|null $secure
      * @psalm-suppress PropertyTypeCoercion
@@ -120,98 +119,60 @@ class Client
         )->build();
     }
 
-    /**
-     * @return string
-     */
     public function getAccount(): string
     {
         return $this->http_client->getAccount();
     }
 
-    /**
-     * @param string $account
-     * @return self
-     */
     public function setAccount(string $account): self
     {
         $this->http_client->setAccount($account);
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getToken(): string
     {
         return $this->http_client->getToken();
     }
 
-    /**
-     * @param string $token
-     * @return self
-     */
     public function setToken(string $token): self
     {
         $this->http_client->setToken($token);
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getSecure(): string
     {
         return $this->http_client->getSecure();
     }
 
-    /**
-     * @param string $secure
-     * @return self
-     */
     public function setSecure(string $secure): self
     {
         $this->http_client->setSecure($secure);
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isTest(): bool
     {
         return $this->http_client->isTest();
     }
 
-    /**
-     * @param bool $test
-     * @return self
-     */
     public function setTest(bool $test): self
     {
         $this->http_client->setTest($test);
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isExpired(): bool
     {
         return $this->http_client->isExpired();
     }
 
-    /**
-     * @return int
-     */
     public function getExpire(): int
     {
         return $this->http_client->getExpire();
     }
 
-    /**
-     * @param int $timestamp
-     * @return self
-     */
     public function setExpire(int $timestamp): self
     {
         $this->http_client->setExpire($timestamp);
@@ -220,7 +181,6 @@ class Client
 
     /**
      * Авторизация клиента в сервисе Интеграции
-     * @return bool
      * @throws AuthException
      * @throws Exceptions\RequestException
      */
@@ -229,9 +189,6 @@ class Client
         return $this->http_client->authorize();
     }
 
-    /**
-     * @return Intakes
-     */
     public function intakes(): Intakes
     {
         if ($this->intakes === null) {
@@ -240,9 +197,6 @@ class Client
         return $this->intakes;
     }
 
-    /**
-     * @return Orders
-     */
     public function orders(): Orders
     {
         if ($this->orders === null) {
@@ -251,9 +205,6 @@ class Client
         return $this->orders;
     }
 
-    /**
-     * @return Deliveries
-     */
     public function deliveries(): Deliveries
     {
         if ($this->deliveries === null) {
@@ -262,9 +213,6 @@ class Client
         return $this->deliveries;
     }
 
-    /**
-     * @return Offices
-     */
     public function offices(): Offices
     {
         if ($this->offices === null) {
@@ -273,9 +221,6 @@ class Client
         return $this->offices;
     }
 
-    /**
-     * @return LocationRegions
-     */
     public function regions(): LocationRegions
     {
         if ($this->regions === null) {
@@ -284,9 +229,6 @@ class Client
         return $this->regions;
     }
 
-    /**
-     * @return LocationCities
-     */
     public function cities(): LocationCities
     {
         if ($this->cities === null) {
@@ -295,9 +237,6 @@ class Client
         return $this->cities;
     }
 
-    /**
-     * @return Webhooks
-     */
     public function webhooks(): Webhooks
     {
         if ($this->webhooks === null) {
@@ -306,9 +245,6 @@ class Client
         return $this->webhooks;
     }
 
-    /**
-     * @return Invoices
-     */
     public function invoice(): Invoices
     {
         if ($this->invoices === null) {
@@ -317,9 +253,6 @@ class Client
         return $this->invoices;
     }
 
-    /**
-     * @return Barcodes
-     */
     public function barcodes(): Barcodes
     {
         if ($this->barcodes === null) {
@@ -328,9 +261,6 @@ class Client
         return $this->barcodes;
     }
 
-    /**
-     * @return CalculatorTariffList
-     */
     public function calculatorTariffList(): CalculatorTariffList
     {
         if ($this->calculatorTariffList === null) {
@@ -339,9 +269,6 @@ class Client
         return $this->calculatorTariffList;
     }
 
-    /**
-     * @return CalculatorTariff
-     */
     public function calculatorTariff(): CalculatorTariff
     {
         if ($this->calculatorTariff === null) {
@@ -351,10 +278,7 @@ class Client
     }
 
     /**
-     * @param ApiResponse $response
-     * @param string $className
      * @param string|null $isEntity
-     * @return Response
      * @throws ParsingException
      */
     public function formatResponse(ApiResponse $response, string $className, bool $isEntity = true): Response
@@ -376,9 +300,6 @@ class Client
     }
 
     /**
-     * @param ApiResponse $response
-     * @param string $className
-     * @param string|null $itemsKey
      * @return CityList|RegionList|PickupPointList|WebHookList|TariffCodes
      * @throws ParsingException
      */

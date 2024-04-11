@@ -53,7 +53,6 @@ class Api
 
     /**
      * Api constructor.
-     * @param ClientInterface $http
      * @param string|null $account
      * @param string|null $secure
      */
@@ -64,66 +63,41 @@ class Api
         $this->client = $http;
     }
 
-    /**
-     *
-     * @return string
-     */
     public function getAccount(): string
     {
         return $this->account;
     }
 
-    /**
-     * @param string $account
-     */
     public function setAccount(string $account): void
     {
         $this->account = $account;
     }
 
-    /**
-     * @return string
-     */
     public function getToken(): string
     {
         return $this->token;
     }
 
-    /**
-     * @param string $token
-     */
     public function setToken(string $token): void
     {
         $this->token = $token;
     }
 
-    /**
-     * @return string
-     */
     public function getSecure(): string
     {
         return $this->secure;
     }
 
-    /**
-     * @param string $secure
-     */
     public function setSecure(string $secure): void
     {
         $this->secure = $secure;
     }
 
-    /**
-     * @return bool
-     */
     public function isTest(): bool
     {
         return $this->test;
     }
 
-    /**
-     * @param bool $test
-     */
     public function setTest(bool $test): void
     {
         $this->test = $test;
@@ -135,7 +109,6 @@ class Api
 
     /**
      * Авторизация клиента в сервисе Интеграции
-     * @return bool
      * @throws AuthException
      * @throws RequestException
      */
@@ -158,34 +131,22 @@ class Api
         throw new AuthException($message);
     }
 
-    /**
-     * @return bool
-     */
     public function isExpired(): bool
     {
         return $this->expire < time();
     }
 
-    /**
-     * @return int
-     */
     public function getExpire(): int
     {
         return $this->expire;
     }
 
-    /**
-     * @param int $timestamp
-     */
     public function setExpire(int $timestamp): void
     {
         $this->expire = $timestamp;
     }
 
     /**
-     * @param string $url
-     * @param array $params
-     * @return ApiResponse
      * @throws RequestException
      */
     public function post(string $url, array $params = []): ApiResponse
@@ -194,9 +155,6 @@ class Api
     }
 
     /**
-     * @param string $url
-     * @param array $params
-     * @return ApiResponse
      * @throws RequestException
      */
     public function patch(string $url, array $params = []): ApiResponse
@@ -205,8 +163,6 @@ class Api
     }
 
     /**
-     * @param string $url
-     * @return ApiResponse
      * @throws RequestException
      */
     public function get(string $url): ApiResponse
@@ -215,8 +171,6 @@ class Api
     }
 
     /**
-     * @param string $url
-     * @return ApiResponse
      * @throws RequestException
      */
     public function delete(string $url): ApiResponse
@@ -225,10 +179,6 @@ class Api
     }
 
     /**
-     * @param string $method
-     * @param string $url
-     * @param array $params
-     * @return ApiResponse
      * @throws RequestException
      */
     protected function request(string $method, string $url, array $params = []): ApiResponse
@@ -254,17 +204,13 @@ class Api
             $request = new Request($method, $uri, $headers, $body);
             $response = $this->client->sendRequest($request);
             return new ApiResponse($response);
-        } catch (ClientExceptionInterface $e) {
-            throw new RequestException($e->getMessage(), (int)$e->getCode());
-        } catch (\Exception $e) {
+        } catch (ClientExceptionInterface | \Exception $e) {
             throw new RequestException($e->getMessage(), (int)$e->getCode());
         }
     }
 
     /**
      * Преобразовываем json в массив
-     * @param string $body
-     * @return array
      */
     private function decodeBody(string $body): array
     {

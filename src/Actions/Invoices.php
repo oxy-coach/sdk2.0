@@ -22,8 +22,6 @@ class Invoices extends Action
 
     /**
      * Запрос на формирование квитанции к заказу
-     * @param Invoice $invoice
-     * @return ApiResponse
      * @throws RequestException
      */
     public function add(Invoice $invoice): ApiResponse
@@ -34,8 +32,6 @@ class Invoices extends Action
 
     /**
      * Запрос на получение данных печатной формы
-     * @param string $uuid
-     * @return ApiResponse
      * @throws RequestException
      */
     public function download(string $uuid): ApiResponse

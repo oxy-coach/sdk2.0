@@ -22,8 +22,6 @@ class Barcodes extends Action
 
     /**
      * Запрос на формирование ШК-места к заказу
-     * @param Barcode $barcode
-     * @return ApiResponse
      * @throws RequestException
      */
     public function add(Barcode $barcode): ApiResponse
@@ -34,8 +32,6 @@ class Barcodes extends Action
 
     /**
      * Запрос на получение данных печатной формы
-     * @param string $uuid
-     * @return ApiResponse
      * @throws RequestException
      */
     public function download(string $uuid): ApiResponse

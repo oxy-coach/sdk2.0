@@ -72,7 +72,6 @@ class Delivery extends Base
 
     /**
      * Delivery constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

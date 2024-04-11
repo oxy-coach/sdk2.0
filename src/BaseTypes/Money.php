@@ -35,7 +35,6 @@ class Money extends Base
 
     /**
      * Money constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

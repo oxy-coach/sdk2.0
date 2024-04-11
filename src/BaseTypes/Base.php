@@ -31,7 +31,6 @@ class Base
 
     /**
      * Base конструктор
-     * @param array $param
      */
     public function __construct(array $param = [])
     {
@@ -44,7 +43,6 @@ class Base
 
     /**
      * Валидация правил
-     * @return bool
      * @psalm-suppress UndefinedDocblockClass
      */
     public function validate(): bool
@@ -69,7 +67,6 @@ class Base
     /**
      * Создание объекта из массива
      * @param array $data
-     * @return Base
      */
     public static function create($data = []): self
     {

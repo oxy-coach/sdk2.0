@@ -22,8 +22,6 @@ class Webhooks extends ActionsWithDelete
 
     /**
      * Добавление нового слушателя вебхуков
-     * @param WebHook $webHook
-     * @return ApiResponse
      * @throws \CdekSDK2\Exceptions\RequestException
      */
     public function add(WebHook $webHook): ApiResponse
@@ -34,7 +32,6 @@ class Webhooks extends ActionsWithDelete
 
     /**
      * Получение списка вебхуков
-     * @return ApiResponse
      * @throws \CdekSDK2\Exceptions\RequestException
      */
     public function list(): ApiResponse
@@ -44,14 +41,12 @@ class Webhooks extends ActionsWithDelete
 
     /**
      * Парсер входящих хуков
-     * @param string $string
-     * @return InputHook
      */
     public function parse(string $string): InputHook
     {
         try {
             $result = $this->serializer->deserialize($string, InputHook::class, 'json');
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             $result = new InputHook();
         }
         return $result;

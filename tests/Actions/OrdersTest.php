@@ -18,14 +18,12 @@ use Symfony\Component\HttpClient\Psr18Client;
 
 class OrdersTest extends TestCase
 {
-
     /**
      * @var Orders
      */
     protected $orders;
 
-
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $psr18Client = new Psr18Client();
@@ -35,10 +33,10 @@ class OrdersTest extends TestCase
         \Doctrine\Common\Annotations\AnnotationReader::addGlobalIgnoredName('phan');
 
         /** @phan-suppress-next-line PhanDeprecatedFunction */
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');
+        \Doctrine\Common\Annotations\AnnotationRegistry::loadAnnotationClass('class_exists');
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         $this->orders = null;

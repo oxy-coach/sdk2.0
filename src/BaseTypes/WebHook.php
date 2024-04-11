@@ -35,7 +35,6 @@ class WebHook extends Base
 
     /**
      * WebHook constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {

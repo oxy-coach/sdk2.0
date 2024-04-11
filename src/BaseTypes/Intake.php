@@ -149,7 +149,6 @@ class Intake extends Base
 
     /**
      * Intake constructor.
-     * @param array $param
      */
     public function __construct(array $param = [])
     {
