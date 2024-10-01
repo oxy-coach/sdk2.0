@@ -7,6 +7,7 @@ namespace CdekSDK2;
 use CdekSDK2\Actions\Barcodes;
 use CdekSDK2\Actions\CalculatorTariff;
 use CdekSDK2\Actions\CalculatorTariffList;
+use CdekSDK2\Actions\Check;
 use CdekSDK2\Actions\Deliveries;
 use CdekSDK2\Actions\Intakes;
 use CdekSDK2\Actions\Invoices;
@@ -72,6 +73,11 @@ class Client
      * @var Offices
      */
     private $offices;
+
+    /**
+     * @var Check
+     */
+    private $check;
 
     /**
      * @var Barcodes
@@ -219,6 +225,14 @@ class Client
             $this->offices = new Offices($this->http_client, $this->serializer);
         }
         return $this->offices;
+    }
+
+    public function check(): Check
+    {
+        if ($this->check === null) {
+            $this->check = new Check($this->http_client, $this->serializer);
+        }
+        return $this->check;
     }
 
     public function regions(): LocationRegions

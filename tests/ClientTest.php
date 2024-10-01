@@ -15,6 +15,7 @@ use CdekSDK2\Actions\Orders;
 use CdekSDK2\Actions\Webhooks;
 use CdekSDK2\BaseTypes\Invoice;
 use CdekSDK2\Constants;
+use CdekSDK2\Dto\Check;
 use CdekSDK2\Dto\RegionList;
 use CdekSDK2\Client;
 use CdekSDK2\Exceptions\ParsingException;
@@ -118,6 +119,12 @@ class ClientTest extends TestCase
     {
         $response = $this->client->offices();
         $this->assertInstanceOf(Offices::class, $response);
+    }
+
+    public function testCheck()
+    {
+        $response = $this->client->check();
+        $this->assertInstanceOf(Check::class, $response);
     }
 
     public function testIntakes()
