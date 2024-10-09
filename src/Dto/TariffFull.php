@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CdekSDK2\Dto;
 
-use CdekSDK2\BaseTypes\Services;
+use CdekSDK2\BaseTypes\TariffServices;
 use JMS\Serializer\Annotation\Type;
 
 class TariffFull
@@ -70,7 +70,7 @@ class TariffFull
      * Дополнительные услуги
      * @Type("CdekSDK2\BaseTypes\Services")
      *
-     * @var Services[]
+     * @var TariffServices[]
      */
     public $services;
 

@@ -60,7 +60,7 @@ class Tariff extends Base
      * Дополнительные услуги
      * @Type("array<CdekSDK2\BaseTypes\Services>")
      *
-     * @var Services[]
+     * @var TariffServices[]
      */
     public $services;
 

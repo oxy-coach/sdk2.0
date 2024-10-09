@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CdekSDK2\Dto;
 
-use CdekSDK2\BaseTypes\Services;
+use CdekSDK2\BaseTypes\TariffServices;
 use JMS\Serializer\Annotation\Type;
 
 class Tariff
@@ -34,6 +34,22 @@ class Tariff
     public $period_max;
 
     /**
+     * Минимальное время доставки (в календарных днях)
+     * @Type("int")
+     *
+     * @var int
+     */
+    public $calendar_min;
+
+    /**
+     * Максимальное время доставки (в календарных днях)
+     * @Type("int")
+     *
+     * @var int
+     */
+    public $calendar_max;
+
+    /**
      * Расчетный вес (в граммах)
      * @Type("int")
      *
@@ -43,9 +59,9 @@ class Tariff
 
     /**
      * Дополнительные услуги
-     * @Type("array<CdekSDK2\BaseTypes\Services>")
+     * @Type("array<CdekSDK2\BaseTypes\TariffServices>")
      *
-     * @var Services[]
+     * @var TariffServices[]
      */
     public $services;
 
