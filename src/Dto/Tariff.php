@@ -34,6 +34,22 @@ class Tariff
     public $period_max;
 
     /**
+     * Минимальное время доставки (в календарных днях)
+     * @Type("int")
+     *
+     * @var int
+     */
+    public $calendar_min;
+
+    /**
+     * Максимальное время доставки (в календарных днях)
+     * @Type("int")
+     *
+     * @var int
+     */
+    public $calendar_max;
+
+    /**
      * Расчетный вес (в граммах)
      * @Type("int")
      *

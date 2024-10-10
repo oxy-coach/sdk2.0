@@ -8,9 +8,9 @@ use CdekSDK2\BaseTypes\Calls;
 use CdekSDK2\BaseTypes\Contact;
 use CdekSDK2\BaseTypes\Location;
 use CdekSDK2\BaseTypes\Money;
+use CdekSDK2\BaseTypes\Services;
 use CdekSDK2\BaseTypes\Package;
 use CdekSDK2\BaseTypes\Seller;
-use CdekSDK2\BaseTypes\Services;
 use CdekSDK2\BaseTypes\Threshold;
 use JMS\Serializer\Annotation\Type;
 

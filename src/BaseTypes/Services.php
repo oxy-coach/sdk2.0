@@ -27,11 +27,46 @@ class Services extends Base
     public $parameter;
 
     /**
-     * Сумма услуги (в валюте договора)
+     * Стоимость услуги (в валюте договора)
      * @Type("float")
      * @var float
      */
     public $sum;
+
+    /**
+     * Сумма услуги (с НДС и скидкой/наценкой в валюте договора)
+     * @Type("float")
+     * @var float
+     */
+    public $total_sum;
+
+    /**
+     * Процент скидки
+     * @Type("float")
+     * @var float
+     */
+    public $discount_percent;
+
+    /**
+     * Общая сумма скидки
+     * @Type("float")
+     * @var float
+     */
+    public $discount_sum;
+
+    /**
+     * Ставка НДС
+     * @Type("float")
+     * @var float
+     */
+    public $vat_rate;
+
+    /**
+     * Сумма НДС
+     * @Type("float")
+     * @var float
+     */
+    public $vat_sum;
 
     public function __construct(array $param = [])
     {
