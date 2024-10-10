@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace CdekSDK2\Dto;
 
 use CdekSDK2\BaseTypes\Services;
-use CdekSDK2\BaseTypes\TariffServices;
 use JMS\Serializer\Annotation\Type;
 
 class Tariff
