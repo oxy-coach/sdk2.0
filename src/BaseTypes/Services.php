@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation\Type;
  * Class Services
  * @package CdekSDK2\BaseTypes
  */
-class OrderServices extends Base
+class Services extends Base
 {
     /**
      * Код дополнительной услуги

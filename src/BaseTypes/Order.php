@@ -167,8 +167,8 @@ class Order extends Base
 
     /**
      * Дополнительные услуги
-     * @Type("array<CdekSDK2\BaseTypes\OrderServices>")
-     * @var OrderServices[]
+     * @Type("array<CdekSDK2\BaseTypes\Services>")
+     * @var Services[]
      */
     public $services;
 
