@@ -118,6 +118,13 @@ class Item extends Base
     public $url;
 
     /**
+     * Код ТН ВЭД
+     * @Type("string")
+     * @var string
+     */
+    public $feacn_code;
+
+    /**
      * Item constructor.
      */
     public function __construct(array $param = [])
