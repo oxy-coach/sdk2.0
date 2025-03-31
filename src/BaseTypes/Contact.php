@@ -91,6 +91,14 @@ class Contact extends Base
      */
     public $tin;
 
+    /**
+     * тип отправителя/получателя
+     * @SkipWhenEmpty()
+     * @Type("string")
+     * @var string
+     */
+    public $contragent_type;
+
 
     /**
      * Contact constructor.
