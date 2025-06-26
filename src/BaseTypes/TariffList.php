@@ -65,6 +65,13 @@ class TariffList extends Base
     public $packages;
 
     /**
+     * Дополнительный тип заказа
+     * @Type("array<int>")
+     * @var int[]
+     */
+    public $additional_order_types;
+
+    /**
      * TariffList constructor.
      */
     public function __construct(array $param = [])
