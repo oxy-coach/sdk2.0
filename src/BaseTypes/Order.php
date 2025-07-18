@@ -29,6 +29,13 @@ class Order extends Base
     public $type;
 
     /**
+     * Дополнительные типы заказа
+     * @Type("array<int>")
+     * @var int[]
+     */
+    public $additional_order_types;
+
+    /**
      * Номер заказа в системе СДЭК
      * @Type("int")
      * @var int
