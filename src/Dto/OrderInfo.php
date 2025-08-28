@@ -210,6 +210,13 @@ class OrderInfo
     public $calls;
 
     /**
+     * Планируемая дата доставки
+     * @Type("string")
+     * @var string
+     */
+    public $planned_delivery_date;
+
+    /**
      * Информация о вручении
      * @Type("CdekSDK2\Dto\DeliveryDetail")
      * @var DeliveryDetail
